@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Noto_Serif, Cabin } from "next/font/google";
 import Header from "./layout/Header";
+import Footer from "./layout/Footer";
 
 const notoSerif = Noto_Serif({
   weight: ["400", "700"],
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
       <body className={`${notoSerif.variable} ${cabin.variable}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

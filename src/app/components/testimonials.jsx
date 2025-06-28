@@ -1,20 +1,30 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
-function TestimonialCard({ testimonial, index }) {
+function TestimonialCard({ testimonial }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth > 0) {
+      setImageLoaded(true);
+    }
+  }, []);
 
   return (
-    <Card className="overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+    <Card className="overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
       <div className="relative aspect-[4/3] bg-gray-100">
         {!imageLoaded && !imageError && (
           <Skeleton className="absolute inset-0 w-full h-full" />
         )}
+
         {!imageError ? (
           <img
+            ref={imgRef}
             src={testimonial.image}
             alt={`${testimonial.coupleName} wedding photo`}
             className={`w-full h-full object-cover transition-opacity duration-300 ${
@@ -46,12 +56,11 @@ function TestimonialCard({ testimonial, index }) {
         )}
       </div>
 
-      <CardContent className="p-6">
-        <blockquote className="text-gray-700 text-sm md:text-base leading-relaxed mb-4 italic">
+      <CardContent className="p-6 flex-1 flex flex-col">
+        <blockquote className="text-gray-700 text-sm md:text-base leading-relaxed mb-4 italic flex-1">
           "{testimonial.description}"
         </blockquote>
-
-        <div className="mt-4 pt-4 border-t border-gray-100">
+        <div className="mt-auto pt-4 border-t border-gray-100">
           <h4 className="font-semibold text-gray-900 text-lg mb-1">
             {testimonial.coupleName}
           </h4>
@@ -68,7 +77,7 @@ function Testimonials() {
       {
         id: 1,
         description:
-          "In our Punjabi families, open discussions around health and legal matters before marriage were uncommon. But with this platform, everything became transparent — from medical checks to background verifications. It helped us build trust from day one.",
+          "In our families, open discussions around health and legal matters before marriage were uncommon. But with this platform, everything became transparent — from medical checks to background verifications. It helped us build trust from day one and made our journey smoother.",
         image: "/assets/testimonial-1.png",
         coupleName: "Neha and Ravi",
         Date: "25 June 2025",
@@ -76,46 +85,34 @@ function Testimonials() {
       {
         id: 2,
         description:
-          "In our Punjabi families, open discussions around health and legal matters before marriage were uncommon. But with this platform, everything became transparent — from medical checks to background verifications. It helped us build trust from day one.",
+          "We appreciated the platform's focus on safety and values. It felt more than just matchmaking — it was a thoughtful process that respected tradition and modern needs. The comprehensive approach gave us confidence in our decision to move forward together.",
         image: "/assets/testimonial-2.png",
-        coupleName: "Neha and Ravi",
-        Date: "25 June 2025",
+        coupleName: "Pooja and Aman",
+        Date: "18 April 2025",
       },
       {
         id: 3,
         description:
-          "In our Punjabi families, open discussions around health and legal matters before marriage were uncommon. But with this platform, everything became transparent — from medical checks to background verifications. It helped us build trust from day one.",
+          "From background verification to a warm introduction — everything felt transparent and trustworthy. It gave us the confidence to take the next step together. The platform's attention to detail and genuine care for our compatibility was remarkable.",
         image: "/assets/testimonial-3.png",
-        coupleName: "Neha and Ravi",
-        Date: "25 June 2025",
+        coupleName: "Ritika and Varun",
+        Date: "12 February 2025",
       },
       {
         id: 4,
         description:
-          "In our Punjabi families, open discussions around health and legal matters before marriage were uncommon. But with this platform, everything became transparent — from medical checks to background verifications. It helped us build trust from day one.",
+          "We felt safe and respected throughout the process. It's not just a platform — it's a service that builds real trust for life-long partnerships. The thorough screening and genuine approach to matchmaking exceeded our expectations completely.",
         image: "/assets/testimonial-4.png",
-        coupleName: "Neha and Ravi",
-        Date: "25 June 2025",
+        coupleName: "Anjali and Rohit",
+        Date: "7 January 2025",
       },
     ],
     []
   );
 
-  const memoizedTestimonials = useMemo(
-    () =>
-      testimonialData.map((testimonial, index) => (
-        <TestimonialCard
-          key={testimonial.id}
-          testimonial={testimonial}
-          index={index}
-        />
-      )),
-    [testimonialData]
-  );
-
   return (
-    <section className="py-16 px-4 bg-gray-50">
-      <div className="container mx-auto max-w-7xl">
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-sm uppercase tracking-wide text-gray-500 mb-2 font-medium">
@@ -128,12 +125,14 @@ function Testimonials() {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {memoizedTestimonials}
+          {testimonialData.map((testimonial) => (
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+          ))}
         </div>
 
         {/* Optional: Load More Button */}
         <div className="text-center mt-12">
-          <button className="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+          <button className="bg-[#E92063] hover:bg-[#E92063]/90 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
             View More Stories
           </button>
         </div>

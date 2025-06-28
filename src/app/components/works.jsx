@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
+// Sample data
 const WORKS_DATA = [
   {
     id: 1,
@@ -38,15 +39,13 @@ const WORKS_DATA = [
 function Works() {
   const [loadedImages, setLoadedImages] = useState(new Set());
 
-  // Memoize handlers to prevent unnecessary re-renders
   const handleImageLoad = useCallback((id) => {
-    setLoadedImages((prev) => new Set([...prev, id]));
+    setLoadedImages((prev) => new Set(prev).add(id));
   }, []);
 
   const handleImageError = useCallback((id) => {
     console.warn(`Failed to load image for step ${id}`);
-    // Still mark as "loaded" to hide skeleton
-    setLoadedImages((prev) => new Set([...prev, id]));
+    setLoadedImages((prev) => new Set(prev).add(id));
   }, []);
 
   const isImageLoaded = useCallback(
@@ -54,30 +53,16 @@ function Works() {
     [loadedImages]
   );
 
-  // Memoize the cached image check function
-  const checkCachedImages = useMemo(() => {
-    return () => {
-      WORKS_DATA.forEach((work) => {
-        const img = new Image();
-        img.onload = () => {
-          if (img.complete && img.naturalWidth > 0) {
-            handleImageLoad(work.id);
-          }
-        };
-        img.onerror = () => {
-          handleImageError(work.id);
-        };
-        img.src = work.img;
-      });
-    };
+  // Optional: Check for cached images on mount
+  useEffect(() => {
+    WORKS_DATA.forEach((work) => {
+      const img = new Image();
+      img.onload = () => handleImageLoad(work.id);
+      img.onerror = () => handleImageError(work.id);
+      img.src = work.img;
+    });
   }, [handleImageLoad, handleImageError]);
 
-  // Check if images are already cached/loaded on component mount
-  useEffect(() => {
-    checkCachedImages();
-  }, [checkCachedImages]);
-
-  // Memoize the work cards to prevent unnecessary re-renders
   const workCards = useMemo(() => {
     return WORKS_DATA.map((work) => (
       <WorkCard
@@ -88,12 +73,11 @@ function Works() {
         onImageError={() => handleImageError(work.id)}
       />
     ));
-  }, [loadedImages, handleImageLoad, handleImageError, isImageLoaded]);
+  }, [isImageLoaded, handleImageLoad, handleImageError]);
 
   return (
     <div className="bg-[#FBF6EE] py-20">
       <section className="container mx-auto py-12 px-4">
-        {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             How It Works
@@ -104,7 +88,6 @@ function Works() {
           </p>
         </div>
 
-        {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {workCards}
         </div>
@@ -114,16 +97,6 @@ function Works() {
 }
 
 const WorkCard = ({ work, isLoaded, onImageLoad, onImageError }) => {
-  const [imgRef, setImgRef] = useState(null);
-
-  // Check if image is already loaded when component mounts
-  useEffect(() => {
-    if (imgRef && imgRef.complete && imgRef.naturalWidth > 0) {
-      onImageLoad();
-    }
-  }, [imgRef, onImageLoad]);
-
-  // Memoize the skeleton component
   const skeletonLoader = useMemo(
     () => (
       <div className="absolute inset-0 z-10">
@@ -136,7 +109,6 @@ const WorkCard = ({ work, isLoaded, onImageLoad, onImageError }) => {
     []
   );
 
-  // Memoize the step badge
   const stepBadge = useMemo(
     () => (
       <div className="absolute top-4 left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md z-20">
@@ -149,14 +121,10 @@ const WorkCard = ({ work, isLoaded, onImageLoad, onImageError }) => {
   return (
     <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-[#EED6B4]">
       <CardContent className="p-0">
-        {/* Image Section */}
         <div className="relative">
-          {/* Loading Skeleton - only show when not loaded */}
           {!isLoaded && skeletonLoader}
 
-          {/* Actual Image */}
           <img
-            ref={setImgRef}
             src={work.img}
             alt={`${work.step} illustration`}
             className={`w-full h-48 md:h-56 lg:h-48 p-2 rounded-2xl object-cover transition-opacity duration-500 ${
@@ -167,11 +135,9 @@ const WorkCard = ({ work, isLoaded, onImageLoad, onImageError }) => {
             loading="lazy"
           />
 
-          {/* Step Number Badge - only show when image is loaded */}
           {isLoaded && stepBadge}
         </div>
 
-        {/* Content Section */}
         <div className="p-6">
           <h2 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">
             {work.step}
