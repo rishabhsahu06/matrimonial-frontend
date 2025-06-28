@@ -25,8 +25,8 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-white shadow-sm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-[50] w-full bg-white shadow-sm">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -34,10 +34,10 @@ export default function Header() {
               <Image
                 src="/assets/logo.svg"
                 alt="Safe & Secure Marriage Logo"
-                width={180}
-                height={45}
+                width={300}
+                height={60}
                 priority
-                className="h-8 md:h-10 w-auto"
+                className="h-28 md:h-50 w-auto"
               />
             </Link>
           </div>
@@ -120,7 +120,7 @@ export default function Header() {
                 <Link href="/login">
                   <Button
                     variant="none"
-                    className="w-full border-2  px-7 font-bold py-2 rounded-lg transition-all duration-300 bg-transparent"
+                    className="w-full border-2 px-7 font-bold py-2 rounded-lg transition-all duration-300 bg-transparent"
                   >
                     Log-In
                   </Button>

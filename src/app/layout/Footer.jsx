@@ -99,14 +99,14 @@ function Footer() {
       <div className="container mx-auto px-4 py-12  ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 ">
           {/* Logo and Description */}
-          <div className="lg:col-span-1 space-y-6 mt-8">
+          <div className="lg:col-span-1 space-y-6 ">
             <div className="space-y-4">
               <Image
                 src="/assets/logo.svg"
                 width={250}
                 height={50}
                 alt="Safe & Secure Marriage Logo"
-                className="h-12 w-auto"
+                className="h-28 md:h-50 w-auto"
                 priority
               />
               <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
