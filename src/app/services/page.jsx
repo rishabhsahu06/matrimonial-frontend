@@ -21,7 +21,7 @@ function Services() {
         {/* Hero Image with overlay text */}
         <div className="relative w-full h-[350px] overflow-hidden">
           <Image
-            src="/assets/services.png"
+            src="/assets/services-img.png"
             alt="Services"
             fill
             className={`object-cover object-center transition-opacity duration-300 ${
