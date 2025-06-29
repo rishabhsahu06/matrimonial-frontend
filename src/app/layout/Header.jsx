@@ -67,9 +67,9 @@ export default function Header() {
 
           {/* Desktop Login Button */}
           <div className="hidden md:block">
-            <Link href="/login">
+            <Link href="/register">
               <Button variant="outline-pink" className="font-bold px-6 py-2">
-                Log-In
+                Register
               </Button>
             </Link>
           </div>
@@ -117,12 +117,12 @@ export default function Header() {
                 })}
               </div>
               <div className="px-10 py-4 mt-4 border-t border-gray-100">
-                <Link href="/login">
+                <Link href="/register">
                   <Button
                     variant="none"
                     className="w-full border-2 px-7 font-bold py-2 rounded-lg transition-all duration-300 bg-transparent"
                   >
-                    Log-In
+                    Register
                   </Button>
                 </Link>
               </div>
