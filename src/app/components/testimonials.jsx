@@ -132,7 +132,7 @@ function Testimonials() {
 
         {/* Optional: Load More Button */}
         <div className="text-center mt-12">
-          <button className="bg-[#E92063] hover:bg-[#E92063]/90 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+          <button className="bg-[#F5821E] hover:bg-[#F5821E]/90 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
             View More Stories
           </button>
         </div>

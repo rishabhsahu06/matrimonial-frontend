@@ -16,7 +16,14 @@ const SafeHonest = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const ProductCard = ({ id, variant = "light", className = "" }) => {
+  const ProductCard = ({
+    id,
+    variant = "light",
+    title,
+    description,
+    price,
+    className = "",
+  }) => {
     const isSelected = selectedPlan === id;
 
     return (
@@ -24,39 +31,48 @@ const SafeHonest = () => {
         onClick={() => setSelectedPlan(id)}
         className={`
           cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${className}
+          ${isSelected ? "ring-2 ring-pink-500 shadow-lg" : ""}
           ${
-            isSelected
-              ? "bg-[#E920631A] border border-pink-500"
-              : variant === "dark"
-              ? "bg-white text-gray-900 border-gray-200"
+            variant === "dark"
+              ? "bg-gray-800 text-white border-gray-700"
               : "bg-white text-gray-900 border-gray-200"
           }
         `}
       >
         <CardContent className="p-6 md:p-8">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 rounded-lg bg-gray-100">
+          <div className="flex items-center gap-3 mb-6">
+            <div
+              className={`p-2 rounded-lg ${
+                variant === "dark" ? "bg-gray-700" : "bg-gray-100"
+              }`}
+            >
               <Shield className="w-5 h-5" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold">
-              Pre-Marital Health & Legal Kit
+            <h3 className="text-xl md:text-2xl font-bold leading-tight">
+              {title}
             </h3>
           </div>
 
-          <p className="text-sm md:text-base leading-relaxed mb-6 text-gray-600">
-            A practical option for couples who want basic but essential health
-            screenings (STD tests, full body checkup, blood group, etc.) A
-            legally binding agreement to{" "}
-            <span className="text-pink-500 font-semibold cursor-pointer hover:underline">
+          <p
+            className={`text-sm md:text-base leading-relaxed mb-8 ${
+              variant === "dark" ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            {description}{" "}
+            <span className="text-orange-500 font-semibold cursor-pointer hover:underline">
               Read More
             </span>
           </p>
 
           <Button
-            className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 group"
+            className={`w-full font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 group ${
+              variant === "dark"
+                ? "bg-orange-500 hover:bg-orange-600 text-white"
+                : "bg-orange-500 hover:bg-orange-600 text-white"
+            }`}
             size="lg"
           >
-            Buy Now ₹9,999.00
+            Buy Now {price}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </CardContent>
@@ -84,17 +100,17 @@ const SafeHonest = () => {
   }
 
   return (
-    <div className="bg-[#FBF6EE] mt-12 py-12">
-      <div className="container mx-auto">
+    <div className="bg-[#FBF6EE] min-h-screen py-12 px-4">
+      <div className="container mx-auto max-w-7xl">
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
             Preparing You for a Safe, Honest, and Confident
             <br className="hidden md:block" />
-            <span className="text-pink-500"> Marriage</span>
+            <span className="text-black"> Marriage</span>
           </h1>
 
-          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
             From medical check-ups to legal agreements and counselling, we offer
             everything you need to build trust and transparency before saying I
             do.
@@ -102,9 +118,21 @@ const SafeHonest = () => {
         </div>
 
         {/* Cards Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-          <ProductCard id="plan1" variant="dark" />
-          <ProductCard id="plan2" variant="light" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <ProductCard
+            id="plan1"
+            variant="dark"
+            title="Pre-Marital Health & Legal Kit"
+            description="A practical option for couples who want basic but essential health screenings (STD tests, full body checkup, blood group, etc.) A legally binding agreement to"
+            price="₹9,999.00"
+          />
+          <ProductCard
+            id="plan2"
+            variant="light"
+            title="Pre-Marital Health & Legal Kit"
+            description="A practical option for couples who want basic but essential health screenings (STD tests, full body checkup, blood group, etc.) A legally binding agreement to"
+            price="₹9,999.00"
+          />
         </div>
       </div>
     </div>

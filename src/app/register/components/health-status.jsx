@@ -142,7 +142,7 @@ function HealthStatus() {
                 </Button>
                 <Button
                   size="lg"
-                  className="text-white bg-[#E92063] hover:bg-[#E92063]/90 px-12 py-6.5 text-base sm:text-lg font-semibold rounded-md transition-colors"
+                  className="text-white bg-[#F5821E] hover:bg-[#F5821E]/90 px-12 py-6.5 text-base sm:text-lg font-semibold rounded-md transition-colors"
                 >
                   Submit
                 </Button>

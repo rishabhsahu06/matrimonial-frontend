@@ -34,7 +34,7 @@ function ChooseUs() {
       title: "Complete Transparency",
       description:
         "We empower couples to enter marriage with open eyes and honest conversations. From health status to legal terms, we help you lay everything on the tab.",
-      bgColor: "bg-[#E9206399]",
+      bgColor: "bg-[#F5821E99]",
       textColor: "text-white",
     },
   ];

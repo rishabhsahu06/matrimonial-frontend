@@ -23,11 +23,11 @@ const buttonVariants = cva(
 
         // ✅ Custom pink styles
         "primary-pink":
-          "bg-[#E92063] text-white hover:bg-[#d51858] border border-[#E92063]",
+          "bg-[#F5821E] text-white hover:bg-[#d51858] border border-[#F5821E]",
         "outline-pink":
-          "bg-transparent text-[#E92063] border border-[#E92063] hover:bg-[#E92063] hover:text-white",
+          "bg-transparent cursor-pointer text-white border border-white hover:bg-[#F5821E]/90 hover:text-white",
         "outline-white":
-          "bg-transparent text-[#E92063] border border-white hover:bg-white hover:text-[#E92063]",
+          "bg-transparent text-[#F5821E] border border-white hover:bg-white hover:text-[#F5821E]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
