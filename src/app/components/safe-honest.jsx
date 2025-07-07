@@ -31,7 +31,7 @@ const SafeHonest = () => {
         onClick={() => setSelectedPlan(id)}
         className={`
           cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${className}
-          ${isSelected ? "ring-2 ring-pink-500 shadow-lg" : ""}
+          ${isSelected ? "ring-2 ring-[#F5821E] shadow-lg" : ""}
           ${
             variant === "dark"
               ? "bg-gray-800 text-white border-gray-700"

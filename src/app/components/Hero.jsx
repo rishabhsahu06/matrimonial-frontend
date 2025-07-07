@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="container mx-auto">
-      <section className="relative min-h-screen w-full overflow-hidden mt-16">
+    <div className=" mx-auto">
+      <section className="relative min-h-screen w-full overflow-hidden ">
         {/* Background Image with animation and mobile-friendly responsiveness */}
         <motion.div
           initial={{ opacity: 0, scale: 1.05 }}

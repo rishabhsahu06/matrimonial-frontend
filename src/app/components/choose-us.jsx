@@ -40,12 +40,12 @@ function ChooseUs() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
+    <div className="container mx-auto py-12 ">
       <section className="space-y-8">
         {/* Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-4 md:mt-8">
           <div className="space-y-4">
-            <p className="text-gray-600 text-sm font-medium tracking-wide uppercase">
+            <p className="text-gray-600 text-sm md:text-lg font-medium tracking-wide uppercase">
               Why Choose Us
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">

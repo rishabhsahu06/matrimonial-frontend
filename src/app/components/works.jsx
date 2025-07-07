@@ -15,24 +15,49 @@ const WORKS_DATA = [
   },
   {
     id: 2,
-    step: "Match",
+    step: "Profile Data Validation",
     description:
-      "Receive tailored partner suggestions based on your values, lifestyle, and compatibility to build genuine connections.",
+      "Profile data uploaded by the individual will be validated with respective departments",
     img: "/assets/match.png",
   },
   {
     id: 3,
-    step: "Verify",
-    description:
-      "Ensure complete transparency with thorough checks on identity, social background, health, financial, and legal status for added trust.",
-    img: "/assets/verify.png",
+    step: "Health Checkup",
+    description: "Individual will be asked for health checkup.",
+    img: "/assets/health.png",
   },
   {
     id: 4,
-    step: "Connect",
+    step: "Police Verification",
+    description: "Verification will be done if there is any criminal records.",
+    img: "/assets/verify.png",
+  },
+  {
+    id: 5,
+    step: "Pre-marriage counselling",
     description:
-      "Engage in secure and meaningful conversations with verified matches to build trust and take the next step with confidence.",
+      "Pre-marriage counselling will be conducted for boys/girls and their families.",
     img: "/assets/connect.png",
+  },
+  {
+    id: 6,
+    step: "Meetings",
+    description:
+      "Virtual as well as physical meeting amongst boys/girls and their families will be organized.",
+    img: "/assets/connect.png",
+  },
+  {
+    id: 7,
+    step: "Search",
+    description: "Individual can search for his/her compatible match.",
+    img: "/assets/search.png",
+  },
+  {
+    id: 8,
+    step: "Help Centre",
+    description:
+      "Toll free numbers are available 24x7 for hassle free inquiries.",
+    img: "/assets/support.png",
   },
 ];
 
@@ -53,7 +78,6 @@ function Works() {
     [loadedImages]
   );
 
-  // Optional: Check for cached images on mount
   useEffect(() => {
     WORKS_DATA.forEach((work) => {
       const img = new Image();
@@ -127,12 +151,12 @@ const WorkCard = ({ work, isLoaded, onImageLoad, onImageError }) => {
           <img
             src={work.img}
             alt={`${work.step} illustration`}
-            className={`w-full h-48 md:h-56 lg:h-48 p-2 rounded-2xl object-cover transition-opacity duration-500 ${
-              isLoaded ? "opacity-100" : "opacity-0"
-            }`}
+            loading="eager"
             onLoad={onImageLoad}
             onError={onImageError}
-            loading="lazy"
+            className={`w-full h-48 md:h-56 lg:h-48 p-2 rounded-2xl object-cover transition duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] transform-gpu ${
+              isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            } hover:scale-105 hover:-rotate-1 hover:shadow-2xl active:scale-100`}
           />
 
           {isLoaded && stepBadge}

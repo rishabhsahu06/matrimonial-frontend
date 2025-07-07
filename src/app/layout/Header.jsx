@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/about", label: "About US" },
+  { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -33,11 +33,11 @@ export default function Header() {
             <Link href="/">
               <Image
                 src="/assets/logo.svg"
+                width={250}
+                height={50}
                 alt="Safe & Secure Marriage Logo"
-                width={400}
-                height={100}
+                className="h-28 md:h-50 w-auto"
                 priority
-                className="h-25 sm:h-25 md:h-25 lg:h-25 xl:h-25 w-auto"
               />
             </Link>
           </div>
@@ -182,6 +182,16 @@ export default function Header() {
               {/* Mobile Profile Images - Only show on mobile */}
               <div className="md:hidden px-3 py-3 mt-3 border-t border-orange-400">
                 <div className="flex items-center justify-center gap-3">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-white">
+                    <Image
+                      src="/assets/bjp-logo.png"
+                      alt="Profile 1"
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-white">
                     <Image
                       src="/assets/pm.png"
