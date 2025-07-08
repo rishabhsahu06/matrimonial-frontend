@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import SafeHonest from "../components/safe-honest";
 import OurMission from "../components/our-mission";
+import Center from "../components/center";
 
 // Skeleton component for loading state
 const ImageSkeleton = () => (
@@ -46,6 +47,7 @@ function Services() {
 
       {/* Additional Components */}
       <SafeHonest />
+      <Center />
       <OurMission />
     </>
   );
