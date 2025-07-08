@@ -65,7 +65,7 @@ function Center() {
             ))}
           </div>
 
-          {/* Logo/Brand Section */}
+          {/* Logo/Brand Section centre */}
           <div className="lg:col-span-1 flex justify-center lg:justify-end">
             <Card className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-lg max-w-sm w-full">
               <CardContent className="flex items-center justify-center p-0">
