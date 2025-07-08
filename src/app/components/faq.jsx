@@ -76,7 +76,7 @@ export default function Faq() {
   };
 
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-gray-50">
+    <section className="w-full py-12  bg-gray-50">
       <div className="container mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
           {/* Left Content */}

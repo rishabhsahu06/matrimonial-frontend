@@ -48,13 +48,13 @@ const SafeHonest = () => {
             >
               <Shield className="w-5 h-5" />
             </div>
-            <h3 className="text-lg md:text-2xl font-bold leading-tight">
+            <h3 className="text-[16px] md:text-lg lg:text-2xl font-bold leading-tight">
               {title}
             </h3>
           </div>
 
           <p
-            className={`text-sm md:text-base leading-relaxed mb-8 ${
+            className={`text-[13px] md:text-base leading-relaxed mb-8 ${
               variant === "dark" ? "text-gray-300" : "text-gray-600"
             }`}
           >

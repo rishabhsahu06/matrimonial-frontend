@@ -30,7 +30,7 @@ function ContactForm() {
 
   return (
     <div className="min-h-screen bg-white mt-12">
-      <section className="container mx-autopy-8 lg:py-16">
+      <section className="container mx-autopy-8 lg:py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Column - Content */}
           <div className="space-y-8">

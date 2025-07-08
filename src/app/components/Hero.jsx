@@ -51,7 +51,7 @@ export default function Hero() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-sm md:text-2xl text-white/90 font-medium mb-4 sm:mb-6"
+                className="text-base md:text-2xl text-white/90 font-medium mb-4 sm:mb-6"
               >
                 Start Your Married Life with Trust and Clarity
               </motion.p>

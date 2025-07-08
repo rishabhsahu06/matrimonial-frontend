@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function AimSection() {
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-white">
+    <section className="w-full py-12 lg:py-20 bg-white">
       <div className="container mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Image Section */}
