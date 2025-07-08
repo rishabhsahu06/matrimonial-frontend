@@ -16,14 +16,29 @@ export default function Hero() {
           viewport={{ once: true }}
           className="absolute inset-0"
         >
-          <Image
-            src="/assets/hero-img1.png"
-            alt="Woman in traditional dress representing trust and clarity in marriage"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center sm:rounded-4xl rounded-none md:mt-14 mt-6"
-          />
+          {/* Desktop/Tablet Image */}
+          <div className="hidden sm:block h-full w-full">
+            <Image
+              src="/assets/hero-img1.png"
+              alt="Woman in traditional dress representing trust and clarity in marriage"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center sm:rounded-4xl rounded-none md:mt-14 mt-6"
+            />
+          </div>
+
+          {/* Mobile Image */}
+          <div className="block sm:hidden h-auto w-full">
+            <Image
+              src="/assets/couple-mobile.jpeg"
+              alt="Couple in traditional dress on mobile screen"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center rounded-none mt-6"
+            />
+          </div>
         </motion.div>
 
         {/* Foreground Content */}

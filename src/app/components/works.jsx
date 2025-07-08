@@ -30,14 +30,14 @@ const WORKS_DATA = [
     id: 4,
     step: "Police Verification",
     description: "Verification will be done if there is any criminal records.",
-    img: "/assets/verify.png",
+    img: "/assets/verficiation.png",
   },
   {
     id: 5,
     step: "Pre-marriage counselling",
     description:
       "Pre-marriage counselling will be conducted for boys/girls and their families.",
-    img: "/assets/connect.png",
+    img: "/assets/marital.png",
   },
   {
     id: 6,

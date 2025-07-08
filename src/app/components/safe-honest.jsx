@@ -48,7 +48,7 @@ const SafeHonest = () => {
             >
               <Shield className="w-5 h-5" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold leading-tight">
+            <h3 className="text-lg md:text-2xl font-bold leading-tight">
               {title}
             </h3>
           </div>

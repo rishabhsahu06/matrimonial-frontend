@@ -15,12 +15,12 @@ function AboutUs() {
 
   return (
     <>
-      <div className="w-full relative">
+      <div className="w-full relative mt-6">
         {/* Skeleton loader */}
         {!imageLoaded && <ImageSkeleton />}
 
         {/* Hero Image with overlay text */}
-        <div className="relative w-full min-h-[500px] md:min-h-[700px] lg:min-h-[800px] overflow-hidden">
+        <div className="relative w-full min-h-[500px] md:min-h-[700px] lg:min-h-[800px] mt-6 overflow-hidden">
           <Image
             src="/assets/about.jpg"
             alt="About Us"

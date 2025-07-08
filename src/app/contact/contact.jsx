@@ -135,7 +135,7 @@ function ContactForm() {
 
               <Button
                 type="submit"
-                className="w-full h-12 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-md transition-colors"
+                className="w-full h-12 bg-[#F5821E] hover:bg-[#F5821E]/90 text-white font-semibold rounded-md transition-colors"
               >
                 Send
               </Button>

@@ -68,9 +68,9 @@ function CoreFocus() {
             key={value.id}
             className="flex flex-col items-center text-center p-4 sm:p-6 hover:bg-gray-50 rounded-lg transition-colors duration-200"
           >
-            <div className="mb-4 p-3 bg-pink-100 rounded-full">
+            <div className="mb-4 p-3 bg-[#fac08e]/90 rounded-full">
               <IconComponent
-                className="w-8 h-8 sm:w-10 sm:h-10 text-pink-600"
+                className="w-8 h-8 sm:w-10 sm:h-10 text-[#F5821E] hover:text-[#F5821E]/90 transition-colors duration-300"
                 strokeWidth={1.5}
               />
             </div>
