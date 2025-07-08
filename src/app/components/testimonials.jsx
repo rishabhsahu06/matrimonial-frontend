@@ -111,7 +111,7 @@ function Testimonials() {
   );
 
   return (
-    <section className="p bg-gray-50">
+    <section className="py-6 bg-gray-50">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
