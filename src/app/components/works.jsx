@@ -107,7 +107,7 @@ function Works() {
             How It Works
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our simple four-step process helps you find your perfect match with
+            Our simple eight-step process helps you find your perfect match with
             ease and confidence
           </p>
         </div>

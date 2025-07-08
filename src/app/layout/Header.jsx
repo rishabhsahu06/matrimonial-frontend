@@ -62,6 +62,17 @@ export default function Header() {
                   </Link>
                 );
               })}
+
+              {/* Add Profile Image next to "Contact" */}
+              <div className="w-10 h-10 xl:w-12 xl:h-12 rounded-full overflow-hidden border-2 border-white">
+                <Image
+                  src="/assets/president.png"
+                  alt="Profile Image"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </nav>
 
@@ -69,7 +80,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             <div className="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 rounded-full overflow-hidden border-2 border-white">
               <Image
-                src="/assets/bjp-logo.png"
+                src="/assets/lion-logo.webp"
                 alt="Profile 3"
                 width={48}
                 height={48}
@@ -184,7 +195,7 @@ export default function Header() {
                 <div className="flex items-center justify-center gap-3">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-white">
                     <Image
-                      src="/assets/bjp-logo.png"
+                      src="/assets/lion-logo.webp"
                       alt="Profile 1"
                       width={56}
                       height={56}
@@ -213,6 +224,16 @@ export default function Header() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-white">
                     <Image
                       src="/assets/as.png"
+                      alt="Profile 3"
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-white">
+                    <Image
+                      src="/assets/president.png"
                       alt="Profile 3"
                       width={56}
                       height={56}

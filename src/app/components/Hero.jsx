@@ -31,7 +31,7 @@ export default function Hero() {
           {/* Mobile Image */}
           <div className="block sm:hidden h-auto w-full">
             <Image
-              src="/assets/couple-mobile.jpeg"
+              src="/assets/couple-mobile.png"
               alt="Couple in traditional dress on mobile screen"
               fill
               priority

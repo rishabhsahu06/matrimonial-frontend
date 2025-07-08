@@ -21,11 +21,26 @@ function AboutUs() {
 
         {/* Hero Image with overlay text */}
         <div className="relative w-full min-h-[500px] md:min-h-[700px] lg:min-h-[800px] mt-6 overflow-hidden">
+          {/* Desktop Image - Visible on medium screens and up */}
           <Image
             src="/assets/about.jpg"
             alt="About Us"
             fill
-            className={`object-cover object-center transition-opacity duration-500 ${
+            className={`object-cover object-center transition-opacity duration-500 md:block ${
+              imageLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1512px"
+            priority
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageLoaded(true)} // Hide skeleton even on error
+          />
+
+          {/* Mobile Image - Visible on small screens only */}
+          <Image
+            src="/assets/about-mobile.png"
+            alt="About Us"
+            fill
+            className={`object-cover object-center transition-opacity duration-500 md:hidden ${
               imageLoaded ? "opacity-100" : "opacity-0"
             }`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1512px"
