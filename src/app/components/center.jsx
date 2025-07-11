@@ -23,9 +23,23 @@ function Center() {
     },
     {
       number: "4",
-      title: "Legal Advisory Desk",
+      title: "Meetings",
       description:
-        "Access to certified legal professionals for guidance on prenuptial agreements, interfaith/legal marriage rights, and conflict resolution frameworks.",
+        "We will organize  physical as well as virtual meetings for  professionals for desired couples and thier families after counselling.",
+    },
+
+    {
+      number: "5",
+      title: "Search",
+      description:
+        "Individual can search in detail for his/her compatible match.es after counselling.",
+    },
+
+    {
+      number: "6",
+      title: "Help Centre",
+      description:
+        "Toll free numbers are made available for 24x7 customer support..",
     },
   ];
 
