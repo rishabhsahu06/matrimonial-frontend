@@ -25,18 +25,19 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[50] w-full bg-[#F5821E] shadow-sm">
-      <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 md:h-18 lg:h-20">
+    <header className="fixed top-0 left-0 right-0 z-[50] w-full bg-[#F5821E] shadow-sm md:h-22">
+      <div className="container mx-auto ">
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-45 lg:h-22 ">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src="/assets/logo.svg"
-                width={250}
-                height={50}
+                src="/assets/destiny.svg"
                 alt="Safe & Secure Marriage Logo"
-                className="h-28 md:h-50 w-auto"
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 150px, (max-width: 1024px) 200px, 250px"
+                className="h-auto w-[150px] sm:w-[200px] md:w-[280px]"
                 priority
               />
             </Link>

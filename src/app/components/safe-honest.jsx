@@ -100,7 +100,7 @@ const SafeHonest = () => {
   }
 
   return (
-    <div className="bg-[#FBF6EE] min-h-screen py-12 px-4">
+    <div className="bg-[#FBF6EE]  py-12 px-4">
       <div className="container mx-auto max-w-7xl">
         {/* Header Section */}
         <div className="text-center mb-12 md:mb-16">

@@ -85,7 +85,7 @@ function CoreFocus() {
 
   return (
     <section className="py-12 lg:py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left: Title */}
           <div className="lg:sticky lg:top-8">
