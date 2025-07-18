@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Link from "next/link"; // Import Link from next/link
 
 export default function Hero() {
   return (
@@ -78,12 +79,15 @@ export default function Hero() {
                 viewport={{ once: true }}
                 className="flex flex-col sm:flex-row gap-4 sm:gap-6"
               >
-                <Button
-                  size="lg"
-                  className="text-white bg-[#F5821E] hover:bg-[#F5821E]/90 px-12 py-6.5 text-base sm:text-lg font-semibold rounded-md transition-colors"
-                >
-                  Discover
-                </Button>
+                <Link href="/register">
+                  <Button
+                    size="lg"
+                    className="text-white bg-[#F5821E] hover:bg-[#F5821E]/90 px-12 py-6.5 text-base sm:text-lg font-semibold rounded-md transition-colors"
+                  >
+                    Discover
+                  </Button>
+                </Link>
+
                 <Button
                   variant="outline"
                   size="lg"
