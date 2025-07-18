@@ -82,7 +82,7 @@ export default function Hero() {
                 <Link href="/register">
                   <Button
                     size="lg"
-                    className="text-white bg-[#F5821E] hover:bg-[#F5821E]/90 px-12 py-6.5 text-base sm:text-lg font-semibold rounded-md transition-colors"
+                    className="text-white bg-[#F5821E] hover:bg-[#F5821E]/90 cursor-pointer px-12 py-6.5 text-base sm:text-lg font-semibold rounded-md transition-colors"
                   >
                     Discover
                   </Button>
